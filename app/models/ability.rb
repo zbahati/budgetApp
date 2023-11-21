@@ -6,10 +6,10 @@ class Ability
     #
     return unless user.present?
 
-    # can :manage, Entity, author_id: user.id
-    # can :manage, category, user_id: user.id
-    # can :manage, categoryEntity, category: { user_id: user.id}
-    # can :read, :all
+    can :manage, Entity, author_id: user.id
+    can :manage, category, user_id: user.id
+    can :manage, categoryEntity, category: { user_id: user.id }
+    can :read, :all
     #   if user.admin?
     #     can :manage, :all
     #   else

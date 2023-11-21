@@ -20,5 +20,4 @@ RSpec.describe User, type: :model do
     user = User.create(name: 'Roy Batty', email: '', password: 'password')
     expect(user).not_to be_valid
   end
-
 end

@@ -7,7 +7,6 @@ RSpec.describe Entity, type: :model do
     expect(entity).to be_valid
   end
 
-
   it 'is not valid without name' do
     user = User.create(name: 'Roy Batty', email: 'roy@batty.com', password: 'password')
     entity = Entity.create(author_id: user.id, name: '', amount: 100.5)
@@ -22,7 +21,7 @@ RSpec.describe Entity, type: :model do
 
   it 'is not valid when amount is less than 0 ' do
     user = User.create(name: 'Roy Batty', email: 'roy@batty.com', password: 'password')
-    entity = Entity.create(author_id: user.id, name: 'Electricity', amount: -10 )
+    entity = Entity.create(author_id: user.id, name: 'Electricity', amount: -10)
     expect(entity).not_to be_valid
   end
 

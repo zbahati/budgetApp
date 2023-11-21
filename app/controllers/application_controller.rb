@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -16,6 +15,4 @@ class ApplicationController < ActionController::Base
   # def after_sign_in_path_for(resource)
   #   users_path
   # end
-
-
 end
