@@ -1,0 +1,42 @@
+<%= form_with(model: [@user, @category]) do |form| %>
+  <% if @category.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@category.errors.count, "error") %>  to fix: </h2>
+
+      <ul>
+        <% @category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
+    <div class="card mb-3 shadow">
+      <div class="card-body">
+        <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="card shadow mb-3">
+      <%= image_tag form.object.image_url if form.object.cached_image_data %>
+      <div class="card-body">
+        <div class="form-group">
+            <%= form.label :Icon %>
+            <%= form.hidden_field :image, value: form.object.cached_image_data %>
+            <%= form.file_field :image, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="card shadow mb-3">
+      <div class="card-body">
+        <div class="form-group">
+          <div>
+              <%= form.submit %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

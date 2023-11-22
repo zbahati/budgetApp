@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  resources :category_entities
   devise_for :users
+
+  resources :users , only: %i[] do
+    resources :entities
+    resources :categories
+  end
   resources :homes, only: %i[index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
