@@ -1,0 +1,18 @@
+<p class="notice text-success"><%= notice %></p>
+<div class="row">
+  <div class="col-lg-11 mx-auto">
+    <div class="card mt-2">
+      <div class="card-title custom-bg-blue">
+        <h1 class="text-center">Editing Transaction</h1>
+      </div>
+      <div class="card-body">
+        <%= render "edit_form"%>
+        <div>
+          <%= link_to "Show this Entity", user_entity_path(params[:id]) %> |
+          <%= link_to "Back to entities", user_entities_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

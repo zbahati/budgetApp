@@ -1,0 +1,37 @@
+
+  <div class="col-lg-10 mx-auto">
+      <div class="card mb-2 shadow ">
+        <div class="card-title custom-bg-blue">
+          <div class="d-flex gap-2 align-items-center category-card">
+              <div class="category_name">
+                <h2> <%= @category.name %></h2>
+              </div>
+              <div class="category_amount">
+                <%= number_to_currency(@category.total_amount_for_user(current_user)) %>
+              </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <% if @entity.any? %>
+            <% @entity.each do |entity|%>
+              <div class="card mb-2 shadow col-lg-8 mx-auto">
+                <div class="card-body">
+                  <div class="d-flex gap-2 align-items-center ml-auto category-card">
+                      <div class="category_name">
+                        <h3> <%= entity.name %></h3>
+                      </div>
+                      <div class="category_amount">
+                        <p><%= number_to_currency(entity.amount)%></p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+          <%else %>
+            <p>No transaction to this category.</p>
+          <% end %>
+          <%= link_to "Manage Transactions", user_entities_path, class:"custom-text-color d-flex justify-content-end" %>
+          <%= link_to "Add New Transaction", new_user_entity_path(id: params[:id]), class:"fixed-bottom custom-text-color custom-btn-link" %>
+        </div>
+      </div>
+  </div>

@@ -24,3 +24,74 @@ body {
   font-size: 2rem;
   text-align: center;
 }
+
+.custom-bg-blue {
+  background-color: var(--custom-blue-color);
+  padding: 10px 0;
+  color: #fff;
+}
+
+.custom-text-color {
+  color: var(--custom-blue-color);
+  font-size: 1.2rem;
+}
+
+.category-card {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.category-card img {
+  width: 15%;
+  object-fit: contain;
+}
+
+.category-card .category-name {
+  width: 70%;
+}
+
+#categories .card-hover:hover,
+#entities .card-hover:hover {
+  transform: scale(0.97);
+}
+
+#categories a,
+#entities a {
+  text-decoration: none;
+}
+
+.custom-btn-link {
+  background-color: var(--custom-green-color);
+  color: #fff;
+  text-decoration: none;
+  font-size: large;
+  text-align: center;
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.btn-back {
+  width: 34px;
+  height: 36px;
+  position: absolute;
+  bottom: 10%;
+  left: 90%;
+  right: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background: var(--custom-blue-color);
+  border-radius: 50%;
+  transition: all ease-in;
+}
+
+.btn-back i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.btn-back:hover {
+  transform: scale(0.96);
+}

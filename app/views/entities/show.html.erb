@@ -1,0 +1,21 @@
+
+  <div class="col-lg-10 col-md-10 col-sm-10 mx-auto">
+      <div class="card mb-2 shadow">
+        <div class="card-body">
+          <div class="d-flex gap-2 align-items-center ml-auto category-card">
+              <div class="category_name">
+                <h2> <%= @entity.name %></h2>
+              </div>
+              <div class="category_amount">
+                <p><%= @entity.amount %></p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <%= link_to "Edit this entity", edit_user_entity_path(@user, @entity) %> |
+        <%= link_to "Back to entities", user_entities_path %>
+
+        <%= button_to "Destroy this entity", user_entity_path, method: :delete %>
+      </div>
+  </div>
