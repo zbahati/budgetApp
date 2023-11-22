@@ -28,8 +28,8 @@ class EntitiesController < ApplicationController
     respond_to do |format|
       if @entity.save
         category = Category.find(params[:entity][:category_id])
-        @entity.category_entities.create(category: category)
-        format.html { redirect_to user_category_path(@user, category), notice: "Entity was successfully created." }
+        @entity.category_entities.create(category:)
+        format.html { redirect_to user_category_path(@user, category), notice: 'Entity was successfully created.' }
         format.json { render :show, status: :created, location: @entity }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class EntitiesController < ApplicationController
   end
 
   # PATCH/PUT /entities/1 or /entities/1.json
- # PATCH/PUT /entities/1 or /entities/1.json
+  # PATCH/PUT /entities/1 or /entities/1.json
   def update
     @entity = Entity.find(params[:id])
 
@@ -47,11 +47,7 @@ class EntitiesController < ApplicationController
       if @entity.update(entity_params)
         new_category_id = params[:entity][:category_id]
 
-        if @entity.category_entities.first
-          old_category_id = @entity.category_entities.first.category_id
-        else
-          old_category_id = nil
-        end
+        old_category_id = @entity.category_entities.first&.category_id
 
         if old_category_id != new_category_id
           new_category = Category.find(new_category_id)
@@ -65,7 +61,7 @@ class EntitiesController < ApplicationController
           end
         end
 
-        format.html { redirect_to user_entities_path(@entity), notice: "Entity was successfully updated." }
+        format.html { redirect_to user_entities_path(@entity), notice: 'Entity was successfully updated.' }
         format.json { render :show, status: :ok, location: @entity }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -74,29 +70,29 @@ class EntitiesController < ApplicationController
     end
   end
 
-
   # DELETE /entities/1 or /entities/1.json
   def destroy
     @entity = Entity.find(params[:id])
 
     respond_to do |format|
       if @entity.destroy
-      format.html { redirect_to user_entities_path, notice: "Entity was successfully destroyed." }
-      format.json { head :no_content }
+        format.html { redirect_to user_entities_path, notice: 'Entity was successfully destroyed.' }
+        format.json { head :no_content }
       else
-        format.html { redirect_to user_categories_path, alert: "Failed to destroy category." }
+        format.html { redirect_to user_categories_path, alert: 'Failed to destroy category.' }
       end
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = current_user
-    end
 
-    # Only allow a list of trusted parameters through.
-    def entity_params
-      params.require(:entity).permit(:name, :amount)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = current_user
+  end
+
+  # Only allow a list of trusted parameters through.
+  def entity_params
+    params.require(:entity).permit(:name, :amount)
+  end
 end

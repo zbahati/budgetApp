@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to user_categories_path(@category), notice: "Category was successfully created." }
+        format.html { redirect_to user_categories_path(@category), notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +41,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @user.categories.update(category_params)
-        format.html { redirect_to user_categories_path(@user,@category), notice: "Category was successfully updated." }
+        format.html { redirect_to user_categories_path(@user, @category), notice: 'Category was successfully updated.' }
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -56,21 +56,22 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.destroy
-        format.html { redirect_to user_categories_path, notice: "Category was successfully destroyed." }
+        format.html { redirect_to user_categories_path, notice: 'Category was successfully destroyed.' }
       else
-        format.html { redirect_to user_categories_path, alert: "Failed to destroy category." }
+        format.html { redirect_to user_categories_path, alert: 'Failed to destroy category.' }
       end
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = current_user
-    end
 
-    # Only allow a list of trusted parameters through.
-    def category_params
-      params.require(:category).permit(:name, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = current_user
+  end
+
+  # Only allow a list of trusted parameters through.
+  def category_params
+    params.require(:category).permit(:name, :image)
+  end
 end

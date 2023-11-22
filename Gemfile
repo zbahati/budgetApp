@@ -73,5 +73,5 @@ gem 'devise'
 # gem 'ransack'
 gem 'cancan'
 gem 'cssbundling-rails'
-gem "shrine"
-gem "image_processing"
+gem 'image_processing'
+gem 'shrine'

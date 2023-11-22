@@ -7,7 +7,6 @@ class Category < ApplicationRecord
 
   validates :name, :image, presence: true
 
-
   def total_amount_for_user(user)
     category_entities.joins(:entity).where(entities: { author_id: user.id }).sum(:amount)
   end
