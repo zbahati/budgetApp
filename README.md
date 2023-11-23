@@ -44,7 +44,13 @@
 
 </details>
 
+### Demo <a name="demo-link"></a>
 
+- Video demo
+https://www.loom.com/share/a90fab36e4ef434598cc7991f77b1b7b?sid=d098e8b0-0bbb-4c95-a99c-9e68bfd4fdd1
+
+- Project live on Server
+    https://budgetapp-htg3.onrender.com
 
 ### Key Features <a name="key-features"></a>
 
