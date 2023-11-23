@@ -1,0 +1,19 @@
+
+<div id="categories">
+  <div class="card">
+    <div class="card-title d-flex custom-bg-blue">
+      <%= render "btn_back"%>
+      <h1 class="text-center">Categories</h1>
+    </div>
+    <div class="card-body mt-1">
+      <% @categories.each do |category| %>
+        <div class="mb-2 col-lg-8 col-md-8 col-sm-10 mx-auto card-hover">
+          <%= link_to user_category_path(id: category.id) do %>
+            <%= render category %>
+          <% end%>
+        </div>
+      <% end %>
+      <%= link_to " Add New category", new_user_category_path, class:"fixed-bottom custom-btn-link" %>
+    </div>
+  </div>
+</div>

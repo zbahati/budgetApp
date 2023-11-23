@@ -1,0 +1,17 @@
+
+<div id="entities">
+  <div class="card">
+    <div class="card-title d-flex custom-bg-blue">
+      <%= render "btn_back"%>
+      <h1 class="text-center">Transactions</h1>
+    </div>
+  <div class="card-body mt-1">
+    <% @entities.each do |entity| %>
+      <div class="mb-2 col-lg-8 col-md-8 col-sm-10 mx-auto card-hover">
+        <%= link_to user_entity_path(id: entity.id) do %>
+          <%= render entity %>
+        <% end%>
+      </div>
+    <% end %>
+  </div>
+</div>

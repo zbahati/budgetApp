@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --custom-blue-color: #3778c2;
+  --custom-green-color: #5fb523;
+  --custom-black-color: #434b54;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+#main-page {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+}
+
+#main-page h1 {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.custom-bg-blue {
+  background-color: var(--custom-blue-color);
+  color: #fff;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.custom-text-color {
+  color: var(--custom-blue-color);
+  font-size: 1.2rem;
+}
+
+.category-card {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.category-card img {
+  width: 15%;
+  object-fit: contain;
+}
+
+.category-card .category-name {
+  width: 70%;
+}
+
+#categories .card-hover:hover,
+#entities .card-hover:hover {
+  transform: scale(0.97);
+}
+
+#categories a,
+#entities a {
+  text-decoration: none;
+}
+
+.custom-btn-link {
+  background-color: var(--custom-green-color);
+  color: #fff;
+  text-decoration: none;
+  font-size: large;
+  text-align: center;
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* .btn-back {
+  width: 34px;
+  height: 36px;
+  position: absolute;
+  top: 0;
+  left: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background: var(--custom-blue-color);
+  border-radius: 50%;
+  transition: all ease-in;
+} */
+
+.btn-back i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.btn-back:hover {
+  transform: scale(0.96);
+}
