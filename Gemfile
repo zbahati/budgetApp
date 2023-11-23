@@ -69,7 +69,7 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'devise'
+gem 'devise', '~> 4.9.3'
 # gem 'ransack'
 gem 'cancan'
 gem 'cssbundling-rails'

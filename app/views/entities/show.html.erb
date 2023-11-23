@@ -7,7 +7,7 @@
                 <h2> <%= @entity.name %></h2>
               </div>
               <div class="category_amount">
-                <p><%= @entity.amount %></p>
+                <p><%= number_to_currency( @entity.amount) %></p>
               </div>
           </div>
         </div>
