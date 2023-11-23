@@ -4,12 +4,12 @@ RSpec.describe Category, type: :model do
   before do
     @user = User.create(name: 'Roy Batty', email: 'roy@batty.com', password: 'password')
     @uploaded_file = Shrine.uploaded_file(
-      "id" => "12c3c9721d97ffe32bf825152781f2ee.png",
-      "storage" => "store",
-      "metadata" => {
-        "filename" => "transport.png",
-        "size" => 1572,
-        "mime_type" => "image/png"
+      'id' => '12c3c9721d97ffe32bf825152781f2ee.png',
+      'storage' => 'store',
+      'metadata' => {
+        'filename' => 'transport.png',
+        'size' => 1572,
+        'mime_type' => 'image/png'
       }
     )
   end
