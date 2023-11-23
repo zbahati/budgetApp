@@ -17,12 +17,5 @@
       <p class="notice text-success"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </div>
-    <%if user_signed_in? %>
-      <div class="btn-back">
-        <%= link_to user_categories_path do %>
-          <i class="bi bi-arrow-left-circle-fill"></i>
-        <%end%>
-      </div>
-    <% end %>
   </body>
 </html>

@@ -140,7 +140,9 @@ If you like this project, you can support me by clicking on the start
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for this learning and reviewing our progress
+1. I would like to thank Microverse for this learning and reviewing our progress
+
+2. The design for this project is based on the work created by [Gregoire Vella](https://www.behance.net/gregoirevella) and is used under the terms of the Creative Commons license.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

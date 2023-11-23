@@ -27,8 +27,10 @@ body {
 
 .custom-bg-blue {
   background-color: var(--custom-blue-color);
-  padding: 10px 0;
   color: #fff;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
 }
 
 .custom-text-color {
@@ -71,13 +73,12 @@ body {
   font-weight: 700;
 }
 
-.btn-back {
+/* .btn-back {
   width: 34px;
   height: 36px;
   position: absolute;
-  bottom: 10%;
-  left: 90%;
-  right: 2%;
+  top: 0;
+  left: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +86,7 @@ body {
   background: var(--custom-blue-color);
   border-radius: 50%;
   transition: all ease-in;
-}
+} */
 
 .btn-back i {
   color: white;
